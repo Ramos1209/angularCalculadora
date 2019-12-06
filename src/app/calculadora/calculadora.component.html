@@ -1,0 +1,44 @@
+<nav class="navbar navbar-light bg-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">Calculadora</a>
+</nav>
+
+<div class="container">
+  <div class="form-group">
+    <label for="numero1">Digite 1º Numero</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="data.numero1"
+      placeholder="Apenas Numeros"
+    />
+  </div>
+  <div class="form-group">
+    <label for="numero2">Digite 2º Numero</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="data.numero2"
+      placeholder="Apenas Numeros"
+    />
+  </div>
+  <div class="form-group ">
+    <label for="tipo">Tipo Operação</label>
+    <select [(ngModel)]="data.tipo" class="form-control " name="tipo">
+      <option value="">Selecione </option>
+      <option *ngFor="let t of tipo.get" value="{{ t.id }}">
+        {{ t.descricao }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="resultado">Resultado</label>
+    <input type="text" class="form-control" id="resultado" readonly />
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-primary" (click)="calcualar()">
+      Calcular
+    </button>
+  </div>
+</div>
