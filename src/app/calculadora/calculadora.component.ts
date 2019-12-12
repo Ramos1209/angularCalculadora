@@ -9,18 +9,16 @@ import { CalculadoraService } from "./calculadora.service";
 })
 export class CalculadoraComponent implements OnInit {
   public data: Calculadora = new Calculadora();
-  public tipo = new TipoOperacao();
+  public tipoOperacao = new TipoOperacao();
 
   constructor(private calculaService: CalculadoraService) {}
 
-  ngOnInit() {
-    console.log("init", this.data);
-  }
+  ngOnInit() {}
 
   calcualar() {
+    console.log("here", this.data);
     this.calculaService.calcula(this.data).subscribe(resp => {
       this.data = resp;
-      console.log("passo1", this.data);
     });
   }
 }

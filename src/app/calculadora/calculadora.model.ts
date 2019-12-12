@@ -2,7 +2,7 @@ export class Calculadora {
   numero1: number;
   numero2: number;
   resultado: number;
-  tipo: string;
+  tipoOperacao: string;
 }
 
 export class TipoOperacao {

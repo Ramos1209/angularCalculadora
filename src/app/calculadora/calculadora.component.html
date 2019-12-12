@@ -6,7 +6,7 @@
   <div class="form-group">
     <label for="numero1">Digite 1º Numero</label>
     <input
-      type="text"
+      type="number"
       class="form-control"
       [(ngModel)]="data.numero1"
       placeholder="Apenas Numeros"
@@ -15,17 +15,21 @@
   <div class="form-group">
     <label for="numero2">Digite 2º Numero</label>
     <input
-      type="text"
+      type="number"
       class="form-control"
       [(ngModel)]="data.numero2"
       placeholder="Apenas Numeros"
     />
   </div>
   <div class="form-group ">
-    <label for="tipo">Tipo Operação</label>
-    <select [(ngModel)]="data.tipo" class="form-control " name="tipo">
+    <label for="tipoOperacao">Tipo Operação</label>
+    <select
+      [(ngModel)]="data.tipoOperacao"
+      class="form-control "
+      name="tipoOperacao"
+    >
       <option value="">Selecione </option>
-      <option *ngFor="let t of tipo.get" value="{{ t.id }}">
+      <option *ngFor="let t of tipoOperacao.get" value="{{ t.id }}">
         {{ t.descricao }}
       </option>
     </select>
@@ -33,7 +37,13 @@
 
   <div class="form-group">
     <label for="resultado">Resultado</label>
-    <input type="text" class="form-control" id="resultado" readonly />
+    <input
+      type="number"
+      class="form-control"
+      name="resultado"
+      [ngModel]="data.resultado"
+      readonly
+    />
   </div>
 
   <div>

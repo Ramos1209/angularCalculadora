@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // tslint:disable-next-line: quotemark
-  API: " https://localhost:44333/"
+  API: "https://localhost:44333/"
 };
 
 /*
